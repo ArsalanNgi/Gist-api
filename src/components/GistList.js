@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import styled from "styled-components";
 
 import useGist from "../context/GistContext/useGistContext";
 import Gist from "./Gist";
 import NoResult from "./NoResult";
 import ErrorScreen from "./ErrorScreen";
+import Loading from "./Loading";
 
 const GistList = () => {
 
@@ -22,12 +24,12 @@ const GistList = () => {
 
   // show loading state
   if (loadingPublicGist) {
-    return (<h1 data-testid="loading">Loading...</h1>);
+    return <Loading text="Loading..." />;
   }
 
   // show error screen on failed
-  if(error) {
-    return <ErrorScreen message={error} />
+  if (error) {
+    return <ErrorScreen message={error} />;
   }
 
   // show no result message if no result found
@@ -37,9 +39,15 @@ const GistList = () => {
 
 
   // show all public gist + searched gist by user
-  return (<div data-testid="gist-list">
+  return (<Wrapper data-testid="gist-list">
     {publicGist.map((gist) => <Gist gist={gist} key={gist.id} />)}
-  </div>);
+  </Wrapper>);
 };
+
+const Wrapper = styled.div`
+  max-width: 980px;
+  margin: 0 auto;
+
+`;
 
 export default GistList;

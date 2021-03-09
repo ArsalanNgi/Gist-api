@@ -7,12 +7,17 @@ const UserName = ({ name, link, src }) => {
   return (
     <Wrapper>
       <Avatar src={src} alt={name} />
-      <Link text={name} link={link} data-testid="username"/>
+      <Name text={name} link={link} data-testid="username"/>
     </Wrapper>
   );
 
 };
 
+const Name = styled(Link)`
+  font-size: 16px;
+  font-weight: 600;
+
+`;
 const Wrapper = styled.div`
   display:flex;
   justify-content: center;

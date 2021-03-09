@@ -9,9 +9,8 @@ const Link = ({ icon, text, link, className, ...rest }) => {
 
 export const LinkTag = styled.a`
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   color: #0366d6;
-  font-weight: 600;
   padding : 20px
 `;
 
