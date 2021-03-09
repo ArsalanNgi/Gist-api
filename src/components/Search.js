@@ -21,7 +21,7 @@ const Search = ({ onSearch }) => {
     <Wrapper>
       <InputBox>
         <Octicon name="search" />
-        <Input placeholder="Search Gists for the username" onChange={onInputChange} />
+        <Input data-testid="search-input" placeholder="Search Gists for the username" onChange={onInputChange} />
       </InputBox>
     </Wrapper>
   );
