@@ -14,7 +14,14 @@ export const gist = [
     html_url: "https://gist.github.com/7efcdc637940ebe20c9c5a5d5f2fb5a3",
     id: "7efcdc637940ebe20c9c5a5d5f2fb5a3",
     node_id: "MDQ6R2lzdDdlZmNkYzYzNzk0MGViZTIwYzljNWE1ZDVmMmZiNWEz",
-    owner: { login: "HugsLibRecordKeeper", id: 23506375, node_id: "MDQ6VXNlcjIzNTA2Mzc1", },
+    owner: {
+      login: "HugsLibRecordKeeper",
+      id: 23506375,
+      node_id: "MDQ6VXNlcjIzNTA2Mzc1",
+      avatar_url: "",
+      html_url: "",
+      url: ""
+    },
     public: true,
     truncated: false,
     updated_at: "2021-03-09T09:48:11Z",

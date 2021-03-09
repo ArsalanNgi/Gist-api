@@ -14,7 +14,8 @@ describe("Search Component", () => {
   it('should render a search tag', () => {
     const value = {
       publicGist: [],
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
     const searchElement = screen.getByTestId('search-input');

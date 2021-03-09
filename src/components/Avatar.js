@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-const Avatar = ({ src, alt }) => {
+const Avatar = ({ src, alt = "" }) => {
   return <AvatarWrapper>
-    <Image src={src} alt={alt} data-testid="avatar"/>
+    <Image src={src} alt={alt} data-testid="avatar" />
   </AvatarWrapper>;
 };
 
+Avatar.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+};
 
 const AvatarWrapper = styled.div`
   width: 50px;

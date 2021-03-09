@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import FileList from "./FileList";
 import GistHeader from "./GistHeader";
 
 const Gist = ({ gist = {} }) => {
   const { forks_url, comments_url, owner, created_at, updated_at, description, files } = gist;
-  const { avatar_url, login, url } = owner;
+  const { avatar_url, login, html_url } = owner;
   const fileCount = Object.keys(files).length;
   const iconsList = [
     {
@@ -39,7 +40,7 @@ const Gist = ({ gist = {} }) => {
       <GistHeader
         avatarUrl={avatar_url}
         name={login}
-        url={url}
+        url={html_url}
         createdAt={created_at}
         updatedAt={updated_at}
         iconsList={iconsList}
@@ -52,6 +53,11 @@ const Gist = ({ gist = {} }) => {
   );
 };
 
+
+// prop types
+Gist.propTypes = {
+  gist: PropTypes.object,
+};
 
 const Wrapper = styled.div`
   display: flex;

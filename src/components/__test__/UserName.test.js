@@ -16,7 +16,8 @@ describe("UserName Component", () => {
   it('should render a username', () => {
     const value = {
       publicGist: gist,
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
     const avatarElement = screen.getByTestId('username');

@@ -15,7 +15,8 @@ describe("Avatar Component", () => {
   it('should render a image tag', () => {
     const value = {
       publicGist: gist,
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
     const avatarElement = screen.getByTestId('avatar');

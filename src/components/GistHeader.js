@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import IconList from "./GistIconSections";
 import UserName from "./UserName";
@@ -23,6 +24,17 @@ const GistHeader = ({ avatarUrl, name, url, createdAt, updatedAt, iconsList }) =
     </Wrapper>
   );
 };
+
+// prop types
+GistHeader.propTypes = {
+  iconsList: PropTypes.array,
+  avatarUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  updatedAt: PropTypes.string.isRequired,
+};
+
 
 
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import Link from "./Link";
 
 const FileLink = styled(Link)`
@@ -18,6 +19,12 @@ const FileList = ({ files }) => {
       }
     </Wrapper>
   );
+};
+
+
+// prop types
+FileList.propTypes = {
+  files: PropTypes.object,
 };
 
 

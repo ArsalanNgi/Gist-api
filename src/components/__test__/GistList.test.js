@@ -15,7 +15,8 @@ describe("Gist Component", () => {
   it('should be No Result', () => {
     const value = {
       publicGist: [],
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
     const notResultElement = screen.getByTestId('no-result');
@@ -26,7 +27,8 @@ describe("Gist Component", () => {
     const value = {
       publicGist: [],
       loadingPublicGist: true,
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: ( ) => {}
     };
     renderApp(<App />, value);
     const loadingElement = screen.getByTestId('loading');
@@ -38,7 +40,8 @@ describe("Gist Component", () => {
       publicGist: [],
       error: "Error",
       loadingPublicGist: false,
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
 
@@ -51,7 +54,8 @@ describe("Gist Component", () => {
       publicGist: gist,
       error: "",
       loadingPublicGist: false,
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     };
     renderApp(<App />, value);
 

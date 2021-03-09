@@ -2,6 +2,7 @@ import React, { useCallback, useRef } from 'react';
 import throttle from "lodash/throttle";
 import styled from 'styled-components';
 import Octicon from 'react-octicon';
+import PropTypes from "prop-types";
 
 const Search = ({ onSearch }) => {
 
@@ -26,6 +27,11 @@ const Search = ({ onSearch }) => {
     </Wrapper>
   );
 };
+
+Search.propTypes = {
+  onSearch: PropTypes.func.isRequired
+};
+
 
 const Wrapper = styled.div`
   padding: 8px;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Loading = ({ text }) => {
   return (
@@ -6,6 +7,11 @@ const Loading = ({ text }) => {
       <h1 data-testid="loading">{text}</h1>
     </Wrapper>
   );
+};
+
+// prop types
+Loading.propTypes = {
+  text: PropTypes.string.isRequired
 };
 
 const Wrapper = styled.div`

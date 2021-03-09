@@ -7,7 +7,8 @@ describe("App Component", () => {
   it('should be rendered in dom', () => {
     render(<GistContext.Provider value={{
       publicGist: [],
-      fetchPublicGist: () => { }
+      fetchPublicGist: () => { },
+      getGistByUser: () => { }
     }}>
       <App />
     </GistContext.Provider>
