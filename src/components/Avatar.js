@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Avatar = ({ src, alt }) => {
   return <AvatarWrapper>
-    <Image src={src} alt={alt} />
+    <Image src={src} alt={alt} data-testid="avatar"/>
   </AvatarWrapper>;
 };
 

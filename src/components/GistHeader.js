@@ -1,12 +1,15 @@
 import React from "react";
+import moment from "moment";
 import styled from "styled-components";
+
+import IconList from "./GistIconSections";
 import UserName from "./UserName";
 
-const GistHeader = ({ avatarUrl, login, url, createdAt, updatedAt, iconsList }) => {
+const GistHeader = ({ avatarUrl, name, url, createdAt, updatedAt, iconsList }) => {
   return (
     <Wrapper>
       <GistUserInfoWrapper>
-        <UserName src={avatarUrl} name={login} link={url} />
+        <UserName src={avatarUrl} name={name} link={url} />
         <DateWrapper>
           <GistDate>
             Created at: {moment(createdAt).format("MM/DD/YYYY")}

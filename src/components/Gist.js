@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
 
-import Link from "./Link";
-import UserName from "./UserName";
-import IconList from "./GistIconSections";
 import FileList from "./FileList";
 import GistHeader from "./GistHeader";
 
 const Gist = ({ gist = {} }) => {
   const { forks_url, comments_url, owner, created_at, updated_at, description, files } = gist;
   const { avatar_url, login, url } = owner;
+  const fileCount = Object.keys(files).length;
   const iconsList = [
     {
-      text: "Files",
+      text: `${fileCount} Files`,
       icon: "code",
       link: ''
     },
@@ -38,7 +35,7 @@ const Gist = ({ gist = {} }) => {
 
   ];
   return (
-    <Wrapper>
+    <Wrapper data-testid="gist">
       <GistHeader
         avatarUrl={avatar_url}
         name={login}

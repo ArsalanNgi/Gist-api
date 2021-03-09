@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ErrorScreen = ({ message }) => {
   return (
     <Wrapper>
-      <h1>{message}</h1>
+      <h1 data-testid="error-message">{message}</h1>
     </Wrapper>
   );
 };

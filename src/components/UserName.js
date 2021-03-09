@@ -7,7 +7,7 @@ const UserName = ({ name, link, src }) => {
   return (
     <Wrapper>
       <Avatar src={src} alt={name} />
-      <Link text={name} link={link} />
+      <Link text={name} link={link} data-testid="username"/>
     </Wrapper>
   );
 

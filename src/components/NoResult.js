@@ -5,7 +5,7 @@ const NoResult = () => {
   return (
     <Wrapper>
       <SearchIcon name="search"/>
-      <h1>No Result Found.</h1>
+      <h1 data-testid="no-result">No Result Found.</h1>
     </Wrapper>
   );
 }
