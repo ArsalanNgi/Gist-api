@@ -1,15 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import Octicon from 'react-octicon'
+import React from 'react';
+import styled from 'styled-components';
+import Octicon from 'react-octicon';
 import Search from './Search';
+import useGist from "../context/GistContext/useGistContext";
 
-function Header() {
+function Header () {
+  const { getGistByUser } = useGist();
   return (
     <Wrapper>
-      <Octicon name="mark-github" mega/>
-      <Search />
+      <Octicon name="mark-github" mega />
+      <Search onSearch={getGistByUser}/>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
@@ -23,4 +25,4 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-export default Header
+export default Header;

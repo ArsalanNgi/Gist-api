@@ -1,17 +1,31 @@
-import React from 'react'
-import styled from 'styled-components'
-import Octicon from 'react-octicon'
+import React, { useCallback, useRef } from 'react';
+import throttle from "lodash/throttle";
+import styled from 'styled-components';
+import Octicon from 'react-octicon';
 
-const Search = () => {
+const Search = ({ onSearch }) => {
+
+  const onThrottleChange = useRef(
+    throttle(value => {
+      console.log(value);
+      onSearch(value);
+    }, 500)
+  ).current;
+
+  const onInputChange = useCallback((event) => {
+    const value = event.target.value;
+    onThrottleChange(value);
+  }, []);
+
   return (
     <Wrapper>
       <InputBox>
-      <Octicon name="search" />
-      <Input placeholder="Search Gists for the username"/>
+        <Octicon name="search" />
+        <Input placeholder="Search Gists for the username" onChange={onInputChange} />
       </InputBox>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   padding: 8px;
@@ -38,4 +52,4 @@ const Input = styled.input`
   }
 `;
 
-export default Search
+export default Search;
